@@ -1,0 +1,125 @@
+:root {
+    --brand: #ffffff;
+    --border-color: #000000;
+    --shadow-color: #000000;
+    --font-serif: "Times New Roman", Times, serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--brand);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Prevents scroll during interaction */
+    font-family: var(--font-serif);
+}
+
+.void-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* --- NEO-BRUTALIST STYLING --- */
+.brutalist-card {
+    border: 4px solid var(--border-color);
+    box-shadow: 12px 12px 0 0 var(--shadow-color);
+    background-color: #ffffff;
+}
+
+.loader-card {
+    position: absolute;
+    z-index: 50;
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.loader-title {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    color: #000;
+}
+
+.progress-track {
+    width: 100%;
+    height: 24px;
+    border: 3px solid #000;
+    background: #f0f0f0;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #000;
+    transition: width 0.3s ease-out;
+}
+
+.loader-status {
+    font-size: 0.9rem;
+    color: #333;
+    font-style: italic;
+}
+
+/* --- MEDIA CONTAINER --- */
+.media-card {
+    position: relative;
+    cursor: pointer;
+    touch-action: manipulation; /* Optimizes touch interactions */
+    -webkit-tap-highlight-color: transparent;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    transition: transform 0.1s ease-in-out;
+}
+
+.media-card.hidden {
+    display: none;
+}
+
+/* The rubberband bounce animation triggered via JS */
+@keyframes rubberband {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.bounce-effect {
+    animation: rubberband 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+#still-image {
+    display: block;
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    transition: opacity 0.05s ease;
+}
+
+#playback-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Forces video to match the exact dimensional footprint of the image */
+    object-fit: fill;
+    opacity: 0;
+    pointer-events: none; /* Clicks pass through to the container */
+}

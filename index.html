@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Interactive Media Void</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- MAIN INTERACTIVE SECTION START -->
+    <main class="void-container">
+        
+        <!-- LOADING OVERLAY START -->
+        <section id="loader" class="brutalist-card loader-card">
+            <h1 class="loader-title">INITIALIZING MEDIA</h1>
+            <div class="progress-track">
+                <div id="progress-bar" class="progress-fill"></div>
+            </div>
+            <p class="loader-status" id="loader-status">Caching 4 visual sequences...</p>
+        </section>
+        <!-- LOADING OVERLAY END -->
+
+        <!-- MEDIA DISPLAY START -->
+        <!-- The container sits in the white void, styled with neo-brutalist traits -->
+        <section id="media-container" class="media-card hidden">
+            
+            <!-- User uploaded image (Idle state) -->
+            <img id="still-image" 
+                 src="https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/dfce8554-5c82-4186-9dc8-9c506cb8bdbe.png" 
+                 alt="Interactive artwork trigger" 
+                 draggable="false">
+
+            <!-- Video player (Playback state). Source injected via JS. Poster is the still image. -->
+            <video id="playback-video" 
+                   playsinline 
+                   muted 
+                   disablePictureInPicture 
+                   poster="https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/dfce8554-5c82-4186-9dc8-9c506cb8bdbe.png">
+            </video>
+
+        </section>
+        <!-- MEDIA DISPLAY END -->
+
+    </main>
+    <!-- MAIN INTERACTIVE SECTION END -->
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
