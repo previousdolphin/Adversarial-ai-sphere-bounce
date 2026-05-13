@@ -1,7 +1,5 @@
 :root {
     --brand: #ffffff;
-    --border-color: #000000;
-    --shadow-color: #000000;
     --font-serif: "Times New Roman", Times, serif;
 }
 
@@ -31,50 +29,49 @@ body {
     padding: 1rem;
 }
 
-/* --- NEO-BRUTALIST STYLING --- */
-.brutalist-card {
-    border: 4px solid var(--border-color);
-    box-shadow: 12px 12px 0 0 var(--shadow-color);
-    background-color: #ffffff;
-}
-
-.loader-card {
+/* --- PIXELATED LOADER --- */
+.pixel-loader {
     position: absolute;
     z-index: 50;
-    padding: 2rem;
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.loader-title {
-    font-size: clamp(1.2rem, 4vw, 1.8rem);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 1.5rem;
-    color: #000;
-}
-
-.progress-track {
-    width: 100%;
+.pixel-progress-track {
+    width: 250px;
     height: 24px;
-    border: 3px solid #000;
-    background: #f0f0f0;
-    position: relative;
-    margin-bottom: 1rem;
+    border: 4px solid #000;
+    background: #fff;
+    padding: 2px;
 }
 
-.progress-fill {
+.pixel-progress-fill {
     height: 100%;
     width: 0%;
-    background: #000;
-    transition: width 0.3s ease-out;
+    background-color: #fff;
+    /* Creates the diagonal 'spiral/barber pole' pattern */
+    background-image: linear-gradient(
+        -45deg,
+        #000 25%,
+        transparent 25%,
+        transparent 50%,
+        #000 50%,
+        #000 75%,
+        transparent 75%,
+        transparent 100%
+    );
+    background-size: 16px 16px;
+    /* Jumpy, step-based animation for a retro pixelated feel */
+    animation: spiral-move 0.4s steps(4) infinite;
+    /* Chunky width growth */
+    transition: width 0.2s steps(10);
+    image-rendering: pixelated;
 }
 
-.loader-status {
-    font-size: 0.9rem;
-    color: #333;
-    font-style: italic;
+@keyframes spiral-move {
+    from { background-position: 0 0; }
+    to { background-position: 16px 0; }
 }
 
 /* --- MEDIA CONTAINER --- */

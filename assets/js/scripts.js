@@ -5,7 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
         "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/b5e5f71c-774b-48fd-9d1c-62a96c5cb797.mp4",
         "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/a761fdb7-82b9-4134-9005-50204b672060.mp4",
         "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/98c4fda9-5b39-4858-a00f-6d8a9a4f7ca4.mp4",
-        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/4321dc72-cf11-4750-b63e-50e015977ed7.mp4"
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/4321dc72-cf11-4750-b63e-50e015977ed7.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/0b51decd-8916-4e97-bcea-93d03219ce2e.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/5c389a3d-e34f-4e1a-9e70-89292ff2afa3.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/c74b514f-1d98-47df-8f0a-07c605c76626.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/0c7eb1d6-cb3a-4222-a5b4-010e2a14724a.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/47330362-1eba-463b-8557-7f50270c71c8.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/fdf3dc10-571b-4b7d-a9d4-bb5dbfdfdbdc.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/1b3714d0-aca4-411c-9f28-daf9b9abb6e9.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/fa9e948a-fb02-4e12-9512-3ecd749e12e8.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/6d1e88f5-c942-4e5f-a599-d48ee0ace71b.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/317cc761-110a-47e7-a046-16830d456c6b.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/1d60ac60-ad27-4dbb-8ea6-b09cddd1103f.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/a3b5a54a-d6fc-4521-ac62-eb6219166331.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/f797ad53-d5f4-4322-abf6-4eaa811cd58b.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/8634ebb4-1670-4ddf-ae07-a29e5e5d11b8.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/67b7fe0e-cd51-42d6-bca2-289561e831d4.mp4",
+        "https://pub-97f5bb5aae4143d9b9879547fc5d1be8.r2.dev/users/df4fa431-2015-4b34-a12e-cd77c6b6e4c0/0a96443e-0ad2-4130-9494-5b4d362d13c0.mp4"
     ];
 
     // Global State
@@ -24,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // without network buffering interruptions.
     async function preloadAssets() {
         let loadedCount = 0;
-        const totalAssets = videoUrls.length + 1; // 4 videos + 1 image
+        const totalAssets = videoUrls.length + 1; // 20 videos + 1 image
 
         const updateProgress = () => {
             loadedCount++;
